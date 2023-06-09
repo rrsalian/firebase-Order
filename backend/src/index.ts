@@ -14,7 +14,9 @@ app.use(cors());
 // allow POST and PUT requests to use JSON bodies
 app.use(express.json());
 
-app.use("/", itemsRouter);
+//app.use("/", itemsRouter);  // router is used to redirect to API's but testing using "hello world" as below
+
+app.get('/',(req,res) => res.send('Hello World'));
 
 // define the port
 const port = 5001;
