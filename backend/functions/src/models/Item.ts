@@ -1,7 +1,5 @@
-import { ObjectId }  from "mongodb";
-
 export interface Item {
-    id: string;
+    _id?: string;
     name: string;
     description: string;
     calories: number;

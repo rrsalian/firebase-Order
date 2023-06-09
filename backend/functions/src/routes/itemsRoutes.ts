@@ -1,4 +1,4 @@
-import { ObjectId } from "mongodb";
+import { ObjectId }  from "mongodb";
 import express from "express";
 import { getClient } from "../db";
 import { Item } from "../models/Item";
@@ -12,9 +12,9 @@ const errorResponse = ( error: any , res: any) => {
 
 itemsRouter.get('/items', async(req, res) => {
     try {
-       let includes = req.query.includes;
-       let maxPrice = req.query.maxPrice;
-       let limit = req.query.limit;
+      // let includes = req.query.includes;
+      // let maxPrice = req.query.maxPrice;
+      // let limit = req.query.limit;
 
       //  let query: any = {
       //    $and: [           
@@ -61,10 +61,10 @@ itemsRouter.post('/items', async(req, res) => {
 
   itemsRouter.put('/items/:id',async (req, res) => {
     try {
-        const _id = new ObjectId(req.params.id);
+        const id = req.params.id;
         const client = await getClient();
-        const results = await client.db().collection<Item>('items').updateOne({_id: _id},{$set:req.body});
-        res.json(results);
+        const results = await client.db().collection<Item>('items').updateOne({id: new ObjectId(id)},{$set:req.body});
+        return res.json(results);
       } catch (err) {
         return errorResponse;
       }    
