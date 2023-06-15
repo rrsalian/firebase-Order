@@ -36,7 +36,7 @@ app.use(express.json());
 
 app.use("/", itemsRouter);  // router is used to redirect to API's but testing using get service with "hello world" as below
 
-// app.get('/',(req,res) => res.send('Hello World to me'));
+//app.get('/',(req,res) => res.send('Hello World to me'));
 
 // define the port - not required with firebase
 //const port = 5001;

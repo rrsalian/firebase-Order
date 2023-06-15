@@ -1,5 +1,5 @@
 {
     "mongodb" : {
-        "uri" : "mongodb+srv://rrsalian7:Rama19sf1@cluster0.zgw1a5j.mongodb.net/express_shop?retryWrites=true&w=majority"
+        "uri" : "mongodb+srv://rrsalian7:mongo123@cluster0.zgw1a5j.mongodb.net/express_shop?retryWrites=true&w=majority"
     }
 }
