@@ -14,7 +14,7 @@ itemsRouter.get('/items', async(req, res) => {
     try {
       const client = await getClient();
       const results = await client.db()
-            .collection<Item>('Items').find().toArray(); 
+            .collection<Item[]>('Items').find().toArray(); 
       console.log(results);
       res.json(results);
 
